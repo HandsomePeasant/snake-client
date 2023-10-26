@@ -16,6 +16,7 @@ const connect = function () {
   conn.on('connect', function() {
     console.log('Successfully connected to game server');
     conn.write('Name: ADM');
+    // setInterval(() => conn.write('Move: up'), 50); // Sends a message to the server to move up one square, every 50ms
   })
 
   return conn;
