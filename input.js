@@ -1,5 +1,5 @@
 const { stdin } = require("process");
-const { connect } = require("./client");
+const { MOVE_UP, MOVE_LEFT, MOVE_DOWN, MOVE_RIGHT, HELLO, GOODBYE } = require("./constants");
 
 let connection;
 
@@ -20,22 +20,22 @@ const handleUserInput = function(key) {
   if (key === '\u0003') {
     process.exit();
   }
-  if (key === 'w') {
+  if (key === MOVE_UP) {
     connection.write('Move: up');
   }
-  if (key === 'a') {
+  if (key === MOVE_LEFT) {
     connection.write('Move: left');
   }
-  if (key === 's') {
+  if (key === MOVE_DOWN) {
     connection.write('Move: down');
   }
-  if (key === 'd') {
+  if (key === MOVE_RIGHT) {
     connection.write('Move: right');
   }
-  if (key === 'q') {
+  if (key === HELLO) {
     connection.write('Say: Howdy');
   }
-  if (key === 'e') {
+  if (key === GOODBYE) {
     connection.write('Say: Ciao');
   }
 }
